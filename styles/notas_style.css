@@ -1,0 +1,222 @@
+/* MANTENGO TUS VARIABLES Y CONFIG GLOBAL */
+:root {
+    --beige: #fdf5e6;
+    --cream: #fffaf0;
+    --gold: #d4af37;
+    --dark-bg: #0a0a0a;
+    --passion-red: #e63946;
+    --text-dark: #333;
+    --glass: rgba(255, 255, 255, 0.4);
+    --note-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* NAVBAR (Igual que el tuyo) */
+.navegacion {
+    margin-top: -70px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #0000001b;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.botones a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.active {
+    color: #ffffff !important;
+    border: solid 2px #ffffff5e;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #5405339e;
+}
+
+/* TÍTULOS */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #5d4037;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #8d6e63;
+    margin-bottom: 50px;
+}
+
+/* NUEVO GRID FLEXIBLE PARA NOTAS */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+    /* Esto hace que no todas tengan que medir lo mismo */
+}
+
+.note-card {
+    background: var(--note-bg);
+    padding: 10px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* Cabecera de fecha */
+.note-header {
+    font-size: 0.8rem;
+    font-family: monospace;
+    color: #9e9e9e;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.note-content img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+
+.note-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #4d352d;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+img.note_photo {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Clase para texto manuscrito */
+.handwritten {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.4rem !important;
+}
+
+/* Contenedor de Video Flexible */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Específico para TikTok */
+.tiktok-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: #000;
+    /* Fondo negro por si tarda en cargar */
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 500px;
+    /* Altura mínima para que no salte el layout al cargar */
+}
+
+.tiktok-embed {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Ajuste para que las notas con TikTok no se vean raras en el grid */
+.notes-grid {
+    align-items: start;
+    /* Importante para que las notas largas de TikTok no estiren a las demás */
+}
+
+
+/* Rotación para estilo Sticky Note */
+.note-card:nth-child(odd) {
+    transform: rotate(-1.5deg);
+}
+
+.note-card:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+.note-card:hover {
+    transform: rotate(0deg) scale(1.03);
+    z-index: 5;
+}
+
+/* FIRMA FINAL */
+.dark-section {
+    background: #050505;
+    color: #e0e0e0;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev-badge {
+    font-family: monospace;
+    color: #949494;
+    font-size: 14px;
+    letter-spacing: 4px;
+    border-bottom: solid green 2px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacion {
+        justify-content: center;
+    }
+}

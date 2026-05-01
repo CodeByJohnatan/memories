@@ -1,0 +1,495 @@
+/* CONFIGURACIÓN GLOBAL */
+:root {
+    --beige: #fdf5e6;
+    --cream: #fffaf0;
+    --gold: #d4af37;
+    --dark-bg: #0a0a0a;
+    --passion-red: #e63946;
+    --text-dark: #333;
+    --glass: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.navegacion {
+    margin-top: -70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #0000001b;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+.botones a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-right: 30px;
+}
+
+.active {
+    color: #ffffff !important;
+    padding-bottom: 5px;
+    transition: all 0.5s ease;
+    border: solid 2px #ffffff5e;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #5405339e;
+
+}
+
+
+/* SECCIÓN WATTPAD (ROMÁNTICA) */
+.wattpad-section {
+    background: linear-gradient(135deg, #fdf5e6 0%, #faecd5 100%);
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    color: #5d4037;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #8d6e63;
+    margin-bottom: 50px;
+}
+
+
+
+/* GRID DE FOTOS ESTILO POLAROID */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.photo-card {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    filter: sepia(20%);
+    /* Toque vintage */
+}
+
+.photo-card span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #5d4037;
+}
+
+/* Rotación aleatoria para realismo */
+.photo-card:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* FRASE CENTRAL */
+.phrase-box {
+    margin: 100px auto;
+    padding: 60px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    max-width: 800px;
+    text-align: center;
+}
+
+blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: #4e342e;
+    position: relative;
+}
+
+/* SECCIÓN MÚSICA */
+.music-section h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    color: #5d4037;
+}
+
+.music-section2 h4 {
+    text-align: justify;
+    font-family: 'Dancing Script';
+    letter-spacing: 2x;
+    font-size: 1.8rem;
+    color: #68544c;
+    margin-bottom: 50px;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #8d6e63;
+    margin-bottom: 50px;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* SECCIÓN DARK (PASIÓN) */
+/* SECCIÓN DARK PROFESIONAL */
+.dark-section {
+    background: #050505;
+    color: #e0e0e0;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Introducción fuera de la terminal */
+.dark-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.glitch-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(212, 175, 55, 0.2);
+}
+
+.passion-p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #b0b0b0;
+}
+
+/* TERMINAL CONTAINER */
+.terminal-container {
+    background: #121212;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.05);
+    max-width: 850px;
+    margin: 0 auto;
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+}
+
+/* Header de la Terminal */
+.terminal-header {
+    background: #1e1e1e;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.r {
+    background: #ff5f56;
+}
+
+.y {
+    background: #ffbd2e;
+}
+
+.g {
+    background: #27c93f;
+}
+
+.terminal-header .title {
+    font-family: monospace;
+    font-size: 13px;
+    color: #666;
+}
+
+/* Cuerpo de la Terminal */
+.terminal-body {
+    padding: 30px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.prmpt {
+    color: #d4af37;
+    margin-right: 10px;
+}
+
+.cmd-line {
+    margin-bottom: 20px;
+}
+
+.typed {
+    color: #fff;
+}
+
+.audit-note {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-left: 3px solid var(--gold);
+    margin: 25px 0;
+    color: #d1d1d1;
+    font-style: italic;
+}
+
+.comment {
+    color: #6a9955;
+}
+
+/* Verde comentarios VS Code */
+
+/* Resaltado de Sintaxis de Código */
+.variable-declaration {
+    margin: 30px 0;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+/* Azul keywords */
+.var-name {
+    color: #9cdcfe;
+}
+
+/* Celeste variables */
+.string {
+    color: #ce9178;
+}
+
+/* Naranja strings */
+
+/* Sistema de Mensajes */
+.message-system {
+    margin-top: 40px;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 25px;
+}
+
+#console-output {
+    margin: 15px 0;
+    min-height: 50px;
+}
+
+.log-entry {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 2px solid var(--gold);
+}
+
+.log-date {
+    color: #888;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.log-text {
+    color: #fff;
+}
+
+.input-area {
+    margin-top: 15px;
+}
+
+#user-msg {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: #27c93f;
+    /* Verde consola */
+    padding: 12px;
+    font-family: monospace;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.terminal-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.t-btn {
+    padding: 8px 20px;
+    font-family: monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-save {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-save:hover {
+    background: #b8962d;
+}
+
+.btn-rm {
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+}
+
+.btn-rm:hover {
+    background: #ff4d4d;
+    color: #fff;
+}
+
+/* Firma y Frase Final */
+.final-signature {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.passion-quote-big {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #ff4d4d;
+    margin-bottom: 30px;
+    animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 77, 77, 0.2);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(255, 77, 77, 0.2);
+    }
+}
+
+.dev-badge {
+    font-family: monospace;
+    color: #444;
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+/* ANIMACIONES */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
+    }
+
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px rgba(230, 57, 70, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .photo-card img {
+        height: 280px;
+    }
+
+    .phrase-box {
+        padding: 30px;
+        margin: 50px 20px;
+    }
+
+    blockquote {
+        font-size: 1.4rem;
+    }
+
+    .passion-quote {
+        font-size: 2.2rem;
+    }
+}
